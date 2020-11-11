@@ -1,0 +1,155 @@
+<style>
+
+body {
+  background: #F8A434;
+  font-family: 'Lato', sans-serif;
+  color: #FDFCFB;
+  
+}
+
+form {
+  width: 450px;
+  margin: 17% auto;
+}
+
+.header {
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+
+.description {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.3em;
+  margin: -2px 0 45px;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  display: block;
+  font-size:11px;
+  padding:4px 2px;
+  width:500px;
+  margin: 0px 200px 0px 0px;
+}
+
+
+.button {
+  height: 44px;
+  border: none;
+}
+
+.name {
+    text-align: center;
+}
+
+.field1 {
+  margin-left: 120px;
+}  
+
+.field2 {
+  margin-left: 120px;
+}  
+
+
+.submit {
+    margin-left: 220px;
+}
+
+
+#submit {
+  width: 25%;
+  height: 46px;
+  background: #E86C8D;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  letter-spacing: 1px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+#email {
+  width: 68%;
+  background: #FDFCFB;
+  font-family: inherit;
+  color: #737373;
+  letter-spacing: 1px;
+  text-indent: 5%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#password {
+  width: 68%;
+  background: #FDFCFB;
+  font-family: inherit;
+  color: #737373;
+  letter-spacing: 1px;
+  text-indent: 5%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#name {
+  width: 25%;
+  background: #FDFCFB;
+  font-family: inherit;
+  color: #737373;
+  letter-spacing: 1px;
+  text-indent: 5%;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#submit {
+  border-radius: 5px 5px 5px 5px;
+}
+
+#submit:hover {
+  background: #d45d7d;
+}
+  
+
+
+</style>
+
+<html>
+    <body>
+        <form action="/signup" method="POST">
+            <div class="header">
+                <p>Sign Up</p>
+            </div>
+
+            <div class="description">
+                <p>Please register to start sharing reviews for your Doctor.</p>
+            </div>
+
+            <div class="input">
+                <div class="name">
+                    <input type="text" name="first_name" class="button" id="name" placeholder="First Name">
+                    <input type="text" name="last_name" class="button" id="name" placeholder="Last Name"><br>
+                    <br>
+                </div>
+
+                <div class="field1">
+                    <input type="text" name="email" class="button" id="email" placeholder="NAME@EXAMPLE.COM"><br>
+                    <br>
+                </div>
+
+                <div class="field2">
+                    <input type="password" name="password" class="button" id="password" placeholder="Password"><br>
+                    <br>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="Sign Up" class="button" id="submit">
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
+
