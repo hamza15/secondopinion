@@ -1,5 +1,6 @@
 <h3>Login</h3>
-<form action="/login" method="POST">
+<p><%= @error %></p>
+<form action="/login" method="post">
   <input type="text" name="email" placeholder="Email:">
   <input type="password" name="password" placeholder="Password:">
   <input type="submit" value="Log In">

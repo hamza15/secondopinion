@@ -14,12 +14,19 @@
     <!--<link rel="stylesheet" href="/stylesheets/main.css" />-->
   </head>
   <body>
+    <div>
+      <div><a href="/reviews">Reviews</a></div>
+      <div><a href="/">Home</a></div>
+      <% if Helpers.is_logged_in?(session) %>
+        <div><a href="/logout">Log Out</a></div>
+      <% end %>
+    </div>
     <div class="wrapper">
 
         <%= yield %>
 
       <footer class="branding">
-        <small>&copy; 2020 <strong>Mvc</strong></small>
+        <small>&copy; 2020 <strong>SecondOpinion</strong></small>
       </footer>
     </div>
 

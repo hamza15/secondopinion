@@ -1,0 +1,14 @@
+<h1>Reviews</h1>
+
+<ul>
+<% @reviews.each do |review| %>
+
+    <li><%= review.stars %> stars - <%= review.post %></li>
+    <a href="/reviews/<%= review.id %>">View</a>
+    <% if review.user && session[:user_id] == review.user.id %>
+        <a href="/reviews/<%= review.id %>/edit">Edit</a><br>
+    <% end %>
+<% end %>
+</ul>
+
+<a href="/reviews/new">Create a Review</a><br><br><br><br><br><br>

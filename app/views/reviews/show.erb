@@ -1,0 +1,13 @@
+<h2>Rating:</h2>
+<p><%= @review.stars %> Stars</p><br>
+
+<h2>Review:</h2>
+<p><%= @review.post %></p>
+
+<form method="post" action="/reviews/<%= @review.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <% if @review.user && session[:user_id] == @review.user.id %>
+        <button type="submit">Delete Review</button>
+    <% end %>
+</form>
+
