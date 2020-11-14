@@ -1,0 +1,17 @@
+<h2>Doctor <%= @doctor.first_name%> <%= @doctor.last_name %>:</h2>
+<p> City: <%= @doctor.city %></p><br>
+
+
+<p> Reviews: </p>
+
+<ul>
+<% @doctor.reviews.each do |review| %>
+
+    <li><%= review.stars %> stars - <%= review.post %></li>
+    <% if review.user && session[:user_id] == review.user.id %>
+        <a href="/reviews/<%= review.id %>/edit">Edit</a><br>
+    <% end %>
+<% end %>
+</ul>
+
+<a href="/doctors/<%= @doctor.id %>/reviews/new">Create a Review</a>

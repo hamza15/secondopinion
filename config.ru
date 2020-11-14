@@ -6,6 +6,7 @@ end
 
 use Rack::MethodOverride
 
+use DoctorsController
 use SessionsController
 use UsersController
 use ReviewsController
