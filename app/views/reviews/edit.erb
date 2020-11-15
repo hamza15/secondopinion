@@ -55,3 +55,10 @@
 
     <button type="submit">Submit</button>
 </form>
+
+<form method="post" action="/reviews/<%= @review.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <% if @review.user && session[:user_id] == @review.user.id %>
+        <button type="submit">Delete Review</button>
+    <% end %>
+</form>

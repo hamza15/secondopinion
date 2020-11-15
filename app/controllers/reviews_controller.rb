@@ -1,8 +1,19 @@
 class ReviewsController < ApplicationController
 
-    #CREATE
+    get '/reviews/:id' do
+        if Helpers.is_logged_in?(session)
+            @review = Review.find_by(id: params[:id])
+            if @review 
+                erb :'reviews/show'
+            else
+                redirect '/reviews'
+            end
+        else
+            @error = "Please log in."
+            erb :'users/login'
+        end
+    end
 
-    #make a get request to '/reviews/new'
     get '/reviews/new' do
         if Helpers.is_logged_in?(session)
             @user = Helpers.current_user(session)
@@ -28,33 +39,17 @@ class ReviewsController < ApplicationController
     #READ
 
     #make a get request to '/reviews'
-    get '/reviews' do
-        if Helpers.is_logged_in?(session)
-            @user = Helpers.current_user(session)
-            @reviews = Review.all.reverse
-            erb :'reviews/index'
-        else
-            @error = "Please log in."
-            erb :'users/login'
-        end
+    # get '/reviews' do
+    #     if Helpers.is_logged_in?(session)
+    #         @user = Helpers.current_user(session)
+    #         @reviews = Review.all.reverse
+    #         erb :'reviews/index'
+    #     else
+    #         @error = "Please log in."
+    #         erb :'users/login'
+    #     end
         
-    end
-
-    #make a get request to '/reviews/:id'
-    get '/reviews/:id' do
-        if Helpers.is_logged_in?(session)
-            @review = Review.find_by(id: params[:id])
-            if @review 
-                erb :'reviews/show'
-            else
-                redirect '/reviews'
-            end
-        else
-            @error = "Please log in."
-            erb :'users/login'
-        end
-    end
-
+    # end
 
     #UPDATE
 
@@ -89,7 +84,7 @@ class ReviewsController < ApplicationController
             @user = Helpers.current_user(session)
             review = Review.find(params[:id])
             review.destroy
-            redirect '/reviews'
+            redirect '/doctors'
         else
             @error = "Please log in."
             erb :'users/login'

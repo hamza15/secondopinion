@@ -7,10 +7,10 @@
 <ul>
 <% @doctor.reviews.each do |review| %>
 
-    <li><%= review.stars %> stars - <%= review.post %></li>
+    <li><%= review.stars %> stars - <%= review.post %></li><br>
     <% if review.user && session[:user_id] == review.user.id %>
-        <a href="/reviews/<%= review.id %>/edit">Edit</a><br>
-    <% end %>
+        Reviewer: <%= review.user.first_name %> <a href="/reviews/<%= review.id %>/edit">Edit</a><br>
+    <% end %><br><br>
 <% end %>
 </ul>
 

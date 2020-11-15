@@ -42,7 +42,7 @@
 
 </style>
 
-<h1>Create a Review</h1>
+<h1>Create a Review for Doctor <%= @doctor.first_name %>:</h1>
 <p><%= @error %></p>
 <form method="post" action="/doctors/<%= @doctor.id %>/reviews">
     <label>Stars: </label><br>

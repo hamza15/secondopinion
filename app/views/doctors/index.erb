@@ -3,8 +3,8 @@
 <ul>
 <% @doctors.each do |doctor| %>
 
-    <li>Dr <%= doctor.first_name %> <%= doctor.last_name %></li><a href="/doctors/<%= doctor.id %>">View</a>
-    
+    <li>Dr <%= doctor.first_name %> <%= doctor.last_name %></li>
+    <a href="/doctors/<%= doctor.id %>">View</a>
 
-<% end %>
+<% end %><br>
 </ul>

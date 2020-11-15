@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
     get "/login" do
         if Helpers.is_logged_in?(session)
-            redirect '/reviews'
+            redirect '/doctors'
         else
             erb :'users/login'
         end
