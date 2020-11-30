@@ -1,6 +1,6 @@
 <h1>Second Opinion</h1>
 
-<p>This Sinatra application is based on a "Yelp" based model. At it's core, it serves as a web application where Users can sign up, find local Doctors and write reeviews for them. As listed above it uses three models:
+<p>This Sinatra application is based on a "Yelp" based model. At it's core, it serves as a web application where Users can sign up, find local Doctors and write reviews for them. As listed above it uses three models:
 
 - Users 
 - Reviews
