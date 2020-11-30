@@ -1,14 +1,10 @@
 class ReviewsController < ApplicationController
 
-
     get '/reviews/:id/edit' do
-        if Helpers.is_logged_in?(session)
-            @review = Review.find(params[:id])
-            erb :'/reviews/edit'
-        else
-            @error = "Please log in."
-            erb :'users/login'
-        end
+        redirect_if_not_loggedin
+        @review = Review.find(params[:id])
+        redirect_if_not_authorized
+        erb :'/reviews/edit'
     end
 
     patch '/reviews/:id' do
@@ -24,15 +20,12 @@ class ReviewsController < ApplicationController
     end
 
     delete '/reviews/:id' do
-        if Helpers.is_logged_in?(session)
-            @user = Helpers.current_user(session)
-            review = Review.find(params[:id])
-            @id = review.doctor_id
-            review.destroy
-            redirect "/doctors/#{@id}"
-        else
-            @error = "Please log in."
-            erb :'users/login'
-        end
+        redirect_if_not_loggedin
+        @user = Helpers.current_user(session)
+        review = Review.find(params[:id])
+        @id = review.doctor_id
+        redirect_if_not_authorized
+        review.destroy
+        redirect "/doctors/#{@id}"
     end
 end

@@ -30,4 +30,16 @@ class ApplicationController < Sinatra::Base
     session.clear
     redirect "/"
   end
+
+  def redirect_if_not_loggedin
+    unless Helpers.is_logged_in?(session)
+      redirect '/login'
+    end
+  end
+
+  def redirect_if_not_authorized
+    unless Helpers.current_user(session) == @review.user
+      redirect '/failure'
+    end  
+  end
 end
