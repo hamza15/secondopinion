@@ -27,8 +27,9 @@ class ReviewsController < ApplicationController
         if Helpers.is_logged_in?(session)
             @user = Helpers.current_user(session)
             review = Review.find(params[:id])
+            @id = review.doctor_id
             review.destroy
-            redirect '/doctors'
+            redirect "/doctors/#{@id}"
         else
             @error = "Please log in."
             erb :'users/login'
