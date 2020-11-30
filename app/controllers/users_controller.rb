@@ -10,8 +10,8 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect '/account'
         else
-            @error = "Invalid fields"
-            redirect "/signup"
+            @error = "Invalid fields. Please try again."
+            erb :'users/signup'
         end
     end
 

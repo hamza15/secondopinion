@@ -12,6 +12,11 @@ form {
   margin: 17% auto;
 }
 
+.error {
+  color: red;
+  text-align: center;
+}
+
 .header {
   font-size: 35px;
   text-transform: uppercase;
@@ -119,7 +124,7 @@ form {
 
 <html>
     <body>
-        <p><%= @error %></p>
+        <p class="error"><%= @error %></p>
         <form action="/signup" method="post">
             <div class="header">
                 <p>Sign Up</p>

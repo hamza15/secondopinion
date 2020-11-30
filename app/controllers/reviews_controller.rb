@@ -15,7 +15,8 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         if !params["review"]["stars"].empty? && !params["review"]["post"].empty? 
             @review.update(params["review"])
-            redirect "/reviews/#{params[:id]}"
+            @review = Review.find(params[:id]).doctor_id
+            redirect "/doctors/#{@review}"
         else
             @error = "Invalid data. Please try again."
             erb :'/reviews'

@@ -46,6 +46,7 @@
 <p><%= @error %></p>
 <form method="post" action="/reviews/<%=@review.id%>">
     <input type="hidden" name="_method" value="patch">
+
     <label>Star Ratings (1-5): </label><br>
     <input type="text" name="review[stars]" value="<%=@review.stars%>">
     <br><br>
